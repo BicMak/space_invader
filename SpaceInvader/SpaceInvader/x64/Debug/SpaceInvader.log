@@ -1,0 +1,7 @@
+﻿  Console.c
+  Invader.c
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\Invader.c(182,31): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+  Junk.c
+  Mychar.c
+  코드를 생성하고 있습니다...
+  SpaceInvader.vcxproj -> D:\class_project\space_invader\SpaceInvader\x64\Debug\SpaceInvader.exe
