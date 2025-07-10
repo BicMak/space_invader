@@ -127,6 +127,7 @@
     <ClCompile Include="Invader.c" />
     <ClCompile Include="Junk.c" />
     <ClCompile Include="Mychar.c" />
+    <ClCompile Include="score.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h" />
