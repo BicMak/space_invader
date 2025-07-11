@@ -70,11 +70,14 @@ void main(void)
 		if (_getch() == 'y')
 		{
 			ClearScreen();
+			InitBullet();
+			InitMyBullet();
 			bp = 0;
 			killnum = 0;
 			timeflag = 0;
 			ptend.y = 12;
 			loop = 1;
+			score = 0;
 		}
 		else
 			loop = 0;
@@ -225,6 +228,9 @@ void DrawBox(UPOINT *score_position, userInfo *scoreBoard) {
 	char ranking[][10] = {"1st","2nd","3rd", "4th", "5th"};
 
 	gotoxy(temppostion);
+	printf("  Player Ranking  ");
+	temppostion.y += 1;
+	gotoxy(temppostion);
 	printf("忙式式式式式式式式\n");   
 	temppostion.y += 1;
 	gotoxy(temppostion);
@@ -236,5 +242,5 @@ void DrawBox(UPOINT *score_position, userInfo *scoreBoard) {
 		gotoxy(temppostion);
 	}
 
-	printf("戌式式式式式式式式戎");
+	printf("戌式式式式式式式式式");
 }

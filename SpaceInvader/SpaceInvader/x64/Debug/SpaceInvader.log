@@ -1,17 +1,11 @@
-﻿  Invader.c
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\Invader.c(39,21): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\Invader.c(29,34): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\Invader.c(130,20): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\Invader.c(209,31): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\Invader.c(99,33): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  Mychar.c
   score.c
 D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(23,6): warning C4029: 선언된 정식 매개 변수 목록이 정의와 다릅니다.
 D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(34,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(61,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(98,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(99,26): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(119,9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(150,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(151,39): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  코드를 생성하고 있습니다...
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(99,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(100,26): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(120,9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(151,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(152,39): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   SpaceInvader.vcxproj -> D:\class_project\space_invader\SpaceInvader\x64\Debug\SpaceInvader.exe

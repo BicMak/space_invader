@@ -78,6 +78,7 @@ void GetScore(int user_score, UPOINT curser_position)
  * Input : void
  * Output : void
  * Version : 0.0 미완성임
+ * ---> 버전추가 : 동점일때도 갱신되도록 프로그램 수정
  */
 
 void SaveScore(void)

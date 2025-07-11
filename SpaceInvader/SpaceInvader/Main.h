@@ -45,6 +45,7 @@ void InitMyship();
 void MyBulletshot(UPOINT);
 void DrawMyBullet();
 int  CheckMybullet(UPOINT ptthisMypos);
+void InitMyBullet();
 
 //juck.c 에 저장된 함수 리스트
 void Drawenemyship();

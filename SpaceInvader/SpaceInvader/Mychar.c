@@ -23,6 +23,36 @@ void InitMyship()
 	myship.pos.y = MYSHIP_BASE_POSY;
 }
 
+
+/**
+ * Function Name : InitMyBullet
+ *
+ * Function Description :
+ * 화면상에 생성된 내 캐릭터의 총알을 삭제함
+ *
+ * Input : void,
+ * Output : void
+ * Version : 0.0
+ */
+void InitMyBullet()
+{
+	int i;
+	UPOINT current_pos;
+
+	for (i = 0; i < MAXENEMY_BULLET; i++)
+	{
+		if (myship_bullet[i].flag == TRUE)
+		{
+
+			current_pos.x = myship_bullet[i].pos.x;
+			current_pos.y = myship_bullet[i].pos.y;
+			myship_bullet[i].flag = FALSE;
+			gotoxy(current_pos);
+			printf("  ");
+		}
+	}
+}
+
 /**
  * Function Name : DrawMyship
  *
@@ -32,13 +62,20 @@ void InitMyship()
  *
  * Input : UPOINT *pt, UPOINT *oldpt
  * Output : void
- * Version : 0.0
+ * Version : 1.0
+ *  변경사항 1.0 ---> 캐릭터의 잔상이 사라지는것을 삭제
  */
-
 void DrawMyship(UPOINT* pt, UPOINT* oldpt)
 {
-	gotoxy(*oldpt);
-	printf("     ");
+	UPOINT temp_pt = *oldpt;
+	temp_pt.x -= 2;
+	temp_pt.y += 1;
+	for (int i=0; i < 3; i++)
+	{
+		gotoxy(temp_pt);
+		printf("       ");
+		temp_pt.y -= 1;
+	}
 	gotoxy(*pt);
 	printf("%s", myship_shape);
 }
