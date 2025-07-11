@@ -9,8 +9,8 @@ typedef struct {
 userInfo scoreBoard[5];
 userInfo UserResult;
 
-void GetScore(char user_name, int user_score);
-void saveScore(void);
+void GetScore(int user_score);
+void SaveScore(void);
 void ShowScore(userInfo* scoreBoard);
 
 

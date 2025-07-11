@@ -1,8 +1,12 @@
 #include "main.h"
+#include "score.h"
+
 UPOINT ptthisMypos;
 int    timeflag = FALSE;
 int    score, hiscore = 2000, killnum;
 char* Aboom[8];
+
+void DrawBox(UPOINT* score_position, userInfo* scoreBoard);
 
 //게임 플레이를 실제로 가동하는 함수
 void main(void)
@@ -22,7 +26,7 @@ void main(void)
 	ptend.y = 12;
 	while (loop)
 	{
-		DWORD         thisTickCount = GetTickCount();
+		DWORD         thisTickCount =  GetTickCount64();
 		DWORD         bcount = thisTickCount;
 		int           bp = 0;
 
@@ -32,7 +36,7 @@ void main(void)
 		{
 			if (timeflag == FALSE)
 			{
-				thisTickCount = GetTickCount();
+				thisTickCount = GetTickCount64();
 
 				if (thisTickCount - bcount > 100)
 				{
@@ -83,16 +87,19 @@ void main(void)
 void  play()
 {
 	static UPOINT ptMyoldpos;
-	DWORD         gthisTickCount = GetTickCount();
+	DWORD         gthisTickCount = GetTickCount64();
 	DWORD         gCount = gthisTickCount;
 	DWORD         Count = gthisTickCount;
 	DWORD         bulletcount = gthisTickCount;
 	UPOINT        ptscore, pthi;
+	UPOINT        ptdashboard;
 	int           juckspeed = 500;
+	userInfo      scoreboard[5];
 
 	InitConsole();
 	InitMyship();
 	Initenemyship();
+	
 
 	ptthisMypos.x = ptMyoldpos.x = MYSHIP_BASE_POSX;
 	ptthisMypos.y = ptMyoldpos.y = MYSHIP_BASE_POSY;
@@ -100,13 +107,18 @@ void  play()
 	ptscore.x = 68;
 	ptscore.y = 1;
 
+	ptdashboard.x = 85;
+	ptdashboard.y = 2;
+
 	pthi.x = 2;
 	pthi.y = 1;
 
+	ShowScore(scoreboard);
+	DrawBox(&ptdashboard,scoreboard);
 
 	while (TRUE)
 	{
-		gthisTickCount = GetTickCount();
+		gthisTickCount = GetTickCount64();
 
 		// 1. 키보드 입력받기
 		if (_kbhit())
@@ -163,12 +175,18 @@ void  play()
 			gotoxy(ptscore);
 
 			if (killnum < 40)
+			{
 				printf("점수 : %d", score);
+				
+				
+			}
+
 			else
 			{
 				timeflag = TRUE;
 				break;
 			}
+			
 
 			if (killnum > 20)
 				juckspeed = 150;
@@ -191,4 +209,23 @@ void  play()
 		}
 	}
 
+}
+
+void DrawBox(UPOINT *score_position, userInfo *scoreBoard) {
+	UPOINT temppostion = *score_position;
+	char ranking[][10] = {"1st","2nd","3rd", "4th", "5th"};
+
+	gotoxy(temppostion);
+	printf("┌────────\n");   
+	temppostion.y += 1;
+	gotoxy(temppostion);
+
+	for (int idx = 0; idx < 5; idx++)
+	{
+		printf("%5s : %5s / %6d \n", ranking[idx], scoreBoard[idx].user, scoreBoard[idx].score);
+		temppostion.y += 1;
+		gotoxy(temppostion);
+	}
+
+	printf("└────────┘");
 }

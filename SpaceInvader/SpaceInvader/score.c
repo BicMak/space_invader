@@ -17,6 +17,7 @@
  * Output : void
  * Version : 0.1
  */
+/*
 void GetScore(int user_score)
 {
 	char user_name[10];
@@ -24,21 +25,26 @@ void GetScore(int user_score)
 	while (1) 
 	{
 		printf("USER Name을 입력하세요:   ");
-		scanf("%s", &user_name);
+		scanf("%s", user_name);
 		if (strlen(user_name) == 3)
 		{
 			break;
 		}
-		else
+		else if(user_name == NULL || strlen(user_name) != 3)
 		{
 			printf("이름은 3글자로 입력해주세요!! \n");
 		}
+
 	}
 
 
 	strcpy(UserResult.user, user_name);
 	UserResult.score = user_score;
 }
+*/
+
+
+
 
 /*
  * Function Name : SaveScore
@@ -50,13 +56,13 @@ void GetScore(int user_score)
  * Output : void
  * Version : 0.0 미완성임
  */
+ /*
 void SaveScore(void)
 {
 	FILE* file = fopen("ranking_table.txt", "r");
 	userInfo temp_info;
 	userInfo resultTable[5];
 	char each_score[100];
-	char *token;
 	bool save_flag = true;
 	
 	int result_idx = 0;
@@ -83,17 +89,18 @@ void SaveScore(void)
 			result_idx += 1;
 		}
 
-		if (result_idx > 5) break;
+		if (result_idx >= MAX_USER_NUMBER) break;
 	}
 	
 	//최종이미지를 저장 시켜줘야됨
 	file = fopen("ranking_table.txt", "w");
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < MAX_USER_NUMBER; i++) {
 		fprintf(file, "%s,%d \n", resultTable[i].user, resultTable[i].score);
 	}
 	fclose(file);
 	
 }
+ */
 
 /*
  * Function Name : ShowScore
@@ -113,11 +120,11 @@ void ShowScore(userInfo* scoreBoard)
 	int result_idx = 0;
 
 	//파일에서 한줄씩 읽기
-	while (fgets(each_score,
+	while(fgets(each_score,
 		sizeof(each_score) / sizeof(each_score[0]),
 		file) != NULL)
 	{
-		strcpy(scoreBoard[result_idx].user, strtok(NULL, ","));
+		strcpy(scoreBoard[result_idx].user, strtok(each_score, ","));
 		scoreBoard[result_idx].score = atoi(strtok(NULL, ","));
 		result_idx += 1;
 	}
