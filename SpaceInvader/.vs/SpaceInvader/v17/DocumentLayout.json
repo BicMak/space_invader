@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\class_project\\space_invader\\SpaceInvader\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\score.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|solutionrelative:SpaceInvader\\score.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\score.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|solutionrelative:SpaceInvader\\score.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\Console.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|solutionrelative:SpaceInvader\\Console.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\score.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|solutionrelative:SpaceInvader\\score.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\Mychar.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|solutionrelative:SpaceInvader\\Mychar.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\Console.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|solutionrelative:SpaceInvader\\Console.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9DE50293-5DF0-4785-B45C-78C4A8180F29}|SpaceInvader\\SpaceInvader.vcxproj|D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\Main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -46,13 +46,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "score.h",
               "DocumentMoniker": "D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\score.h",
               "RelativeDocumentMoniker": "SpaceInvader\\score.h",
               "ToolTip": "D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\score.h",
               "RelativeToolTip": "SpaceInvader\\score.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-07-10T05:25:49.579Z",
               "EditorCaption": ""
@@ -67,8 +67,7 @@
               "RelativeToolTip": "SpaceInvader\\Main.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-10T05:20:13.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T05:20:13.346Z"
             },
             {
               "$type": "Document",
@@ -80,18 +79,17 @@
               "RelativeToolTip": "SpaceInvader\\Console.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-10T05:19:44.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T05:19:44.22Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Mychar.c",
               "DocumentMoniker": "D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\Mychar.c",
               "RelativeDocumentMoniker": "SpaceInvader\\Mychar.c",
               "ToolTip": "D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\Mychar.c",
               "RelativeToolTip": "SpaceInvader\\Mychar.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-07-10T05:19:31.7Z",
               "EditorCaption": ""
@@ -110,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Console.c",
               "DocumentMoniker": "D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\Console.c",
               "RelativeDocumentMoniker": "SpaceInvader\\Console.c",
@@ -118,8 +116,7 @@
               "RelativeToolTip": "SpaceInvader\\Console.c",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-07-10T03:42:05.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T03:42:05.834Z"
             }
           ]
         },
@@ -129,13 +126,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "score.c",
               "DocumentMoniker": "D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\score.c",
               "RelativeDocumentMoniker": "SpaceInvader\\score.c",
               "ToolTip": "D:\\class_project\\space_invader\\SpaceInvader\\SpaceInvader\\score.c",
               "RelativeToolTip": "SpaceInvader\\score.c",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHAAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-07-10T07:09:47.568Z",
               "EditorCaption": ""
@@ -150,8 +147,7 @@
               "RelativeToolTip": "SpaceInvader\\Invader.c",
               "ViewState": "AgIAAHkAAAAAAAAAAAAuwJIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-07-10T05:18:38.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T05:18:38.005Z"
             }
           ]
         }
