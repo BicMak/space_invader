@@ -1,7 +1,8 @@
 #include "main.h"
 #include "score.h"
 
-UPOINT ptthisMypos;
+UPOINT     ptthisMypos;
+BOOM       myship_boom;
 int    timeflag = FALSE;
 int    score, hiscore = 2000, killnum;
 char* Aboom[8];
@@ -92,9 +93,10 @@ void main(void)
  *
  * Input : void
  * Output : void
- * Version : 1.0
+ * Version : 2.0
  * 버전 상세
  *    --> 1.0 상하좌우 기능을 추가함
+ *    --> 2.0 폭탄기능 추가
  */
 void  play()
 {
@@ -103,6 +105,7 @@ void  play()
 	DWORD         gCount = gthisTickCount;
 	DWORD         Count = gthisTickCount;
 	DWORD         bulletcount = gthisTickCount;
+	DWORD         boomcount = gthisTickCount;
 	UPOINT        ptscore, pthi;
 	UPOINT        ptdashboard;
 	int           juckspeed = 500;
@@ -112,7 +115,7 @@ void  play()
 	InitMyship();
 	Initenemyship();
 	
-
+	myship_boom.flag[0] = FALSE;
 	ptthisMypos.x = ptMyoldpos.x = MYSHIP_BASE_POSX;
 	ptthisMypos.y = ptMyoldpos.y = MYSHIP_BASE_POSY;
 
@@ -135,34 +138,40 @@ void  play()
 		// 1. 키보드 입력받기
 		if (_kbhit())
 		{
+
 			switch (_getch())
 			{
+			// 총알 쏘기
 			case 'a':
-				if (gthisTickCount - bulletcount > 500)
+				if (gthisTickCount - bulletcount > 300)
 				{
 					MyBulletshot(ptthisMypos);
 					bulletcount = gthisTickCount;
 				}
 				break;
-				// 오른쪽 이동
+			// 폭탄 쏘기
+			case 's':
+				MyBoomshot(ptthisMypos);
+				break;
+			// 오른쪽 이동
 			case 'j':
 				ptMyoldpos.x = ptthisMypos.x;
 				if (--ptthisMypos.x < 1)ptthisMypos.x = 1;
 				DrawMyship(&ptthisMypos, &ptMyoldpos);
 				break;
-				// 왼쪽 이동
+			// 왼쪽 이동
 			case 'l':
 				ptMyoldpos.x = ptthisMypos.x;
 				if (++ptthisMypos.x > 75)ptthisMypos.x = 75;
 				DrawMyship(&ptthisMypos, &ptMyoldpos);
 				break;
-				//위로 이동
+			//위로 이동
 			case 'i':
 				ptMyoldpos.y = ptthisMypos.y;
 				if (--ptthisMypos.y < 1)ptthisMypos.y = 1;
 				DrawMyship(&ptthisMypos, &ptMyoldpos);
 				break;
-				//아래로 이동
+			//아래로 이동
 			case 'k':
 				ptMyoldpos.y = ptthisMypos.y;
 				if (++ptthisMypos.y > 23)ptthisMypos.y = 23;
@@ -183,14 +192,13 @@ void  play()
 			}
 			CheckenemyBullet(enemyship);
 			DrawMyBullet();
+			DrawBoom();
 			DrawMyship(&ptthisMypos, &ptMyoldpos);
 			gotoxy(ptscore);
 
 			if (killnum < 40)
 			{
 				printf("점수 : %d", score);
-				
-				
 			}
 
 			else

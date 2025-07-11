@@ -12,7 +12,6 @@ HANDLE hout;
  * Output : void
  * Version : 0.0
  */
- 
 void ClearScreen()
 {
 	int i, j;
@@ -44,7 +43,6 @@ void ClearScreen()
  * Output : void
  * Version : 0.0
  */
-
 void InitConsole()
 {
 	CONSOLE_CURSOR_INFO coninfo;
@@ -78,3 +76,4 @@ void gotoxy(UPOINT pt)
 
 	SetConsoleCursorPosition(hout, pos);
 }
+

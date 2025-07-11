@@ -3,7 +3,15 @@
 MYSHIP  myship;
 BULLET myship_bullet[MAXMY_BULLET];
 
-char  myship_shape[10] = "-i^i-";
+char myship_shape[10] = "ui^iu";
+char PowerAttack[5][6] = {
+	{"T_T_T"},
+	{"_T_T_"},
+	{" TTT "},
+	{" III "},
+	{"  I  "}
+};
+
 
 /**
  * Function Name : InitMyship
@@ -154,7 +162,7 @@ void MyBulletshot(UPOINT ptthisMypos)
  * Function Name : CheckMybullet
  *
  * Function Description :
- * ??? 이건 나도 모르겠는데
+ * 적 총알이랑 겹쳤을때 대응하는 함수
  *
  * Input : UPOINT *pt, UPOINT *oldpt
  * Output : void
@@ -188,3 +196,64 @@ int CheckMybullet(UPOINT ptthisMypos)
 
 
 
+void MyBoomshot(UPOINT ptthisMypos)
+{
+	myship_boom.flag[0] = TRUE;
+	myship_boom.pos[0].x = ptthisMypos.x + 2;
+	myship_boom.pos[0].y = ptthisMypos.y - 1;
+	for (int i = 1; i < 5; i++)
+	{
+		myship_boom.pos[i].x = myship_boom.pos[0].x;
+		myship_boom.pos[i].y = myship_boom.pos[0].y - i;
+	}
+}
+
+/**
+ * Function Name : DrawBoom
+ *
+ * Function Description :
+ * 필살기 폭탄을 연출 해줌
+ *
+ * Input : void
+ * Output : void
+ * Version : 현재 미완성
+ */
+void DrawBoom()
+{
+	int i;
+	UPOINT ptpos, oldpos;
+
+
+	if (myship_boom.flag[0] == TRUE)
+	{
+		//캐릭터의 위치와 ship의 위치에 따라서 빔형상 계산
+		for (int i = 0; i < 5; i++) 
+		{
+			if (myship_boom.pos[i].y < 1)
+			{
+				myship_boom.flag[i] = TRUE;
+			}
+			else
+			{
+				myship_boom.flag[i] = FALSE;
+			}
+
+		}
+
+		for (int i = 0; i < 5; i++)
+		{
+			if (myship_boom.flag[i] == TRUE)
+			{
+				oldpos.x = myship_boom.pos[i].x;
+				oldpos.y = myship_boom.pos[i].y;
+				myship_boom.pos[i].y -= 1;
+				ptpos.x = myship_boom.pos[i].x;
+				ptpos.y = myship_boom.pos[i].y;
+				gotoxy(oldpos);
+				printf("    \n");
+				gotoxy(ptpos);
+				printf("%s", PowerAttack[i]);
+			}
+		}
+	}
+}

@@ -9,6 +9,7 @@
 #define FALSE                0
 
 #define MAXMY_BULLET        20   
+#define MAXMY_BOOM           1   
 #define MYSHIP_BASE_POSX    38  
 #define MYSHIP_BASE_POSY    23  
 
@@ -30,11 +31,17 @@ typedef struct {
 } BULLET;
 
 typedef struct {
+	int flag[5]; //0번이 가장 먼저 나가는 레이저
+	UPOINT pos[5]; //
+} BOOM;
+
+typedef struct {
 	int flag;
 	UPOINT pos;
 } ENEMYSHIP;
 
 extern BULLET     myship_bullet[MAXMY_BULLET];
+extern BOOM       myship_boom;
 extern BULLET     enemy_bullet[MAXENEMY_BULLET];
 extern ENEMYSHIP  enemyship[MAX_ENEMY];
 extern int        score, killnum;
@@ -43,9 +50,11 @@ extern int        score, killnum;
 void DrawMyship(UPOINT* pt, UPOINT*);
 void InitMyship();
 void MyBulletshot(UPOINT);
+void MyBoomshot(UPOINT ptthisMypos);
 void DrawMyBullet();
 int  CheckMybullet(UPOINT ptthisMypos);
 void InitMyBullet();
+void DrawBoom();
 
 //juck.c 에 저장된 함수 리스트
 void Drawenemyship();
@@ -58,6 +67,7 @@ void Bulletshot();
 void DrawBullet();
 void InitBullet();
 void CheckenemyBullet(ENEMYSHIP*);
+
 
 void boom(UPOINT pt, int);
 void play();

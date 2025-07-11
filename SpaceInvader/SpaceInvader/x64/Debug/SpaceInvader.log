@@ -1,11 +1,3 @@
 ﻿  Mychar.c
-  score.c
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(23,6): warning C4029: 선언된 정식 매개 변수 목록이 정의와 다릅니다.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(34,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(61,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(99,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(100,26): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(120,9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(151,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\class_project\space_invader\SpaceInvader\SpaceInvader\score.c(152,39): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\Mychar.c(223,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
   SpaceInvader.vcxproj -> D:\class_project\space_invader\SpaceInvader\x64\Debug\SpaceInvader.exe
