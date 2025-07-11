@@ -52,6 +52,15 @@ void main(void)
 				break;
 		}
 
+		ClearScreen();
+		gotoxy(ptend);
+		GetScore(score);
+		Sleep(3000);
+		SaveScore();
+
+		ptend.y += 1;
+
+
 		gotoxy(ptend);
 		printf("당신의 비행기는 파괴되었습니다.");
 		ptend.y += 1;

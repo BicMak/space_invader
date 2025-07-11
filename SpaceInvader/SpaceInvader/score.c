@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <windows.h>
 #include "score.h"
+#include "Console.h"
 
 
 
@@ -17,9 +19,13 @@
  * Output : void
  * Version : 0.1
  */
-/*
-void GetScore(int user_score)
+
+void GetScore(int user_score, UPOINT curser_position)
 {
+	UPOINT initial_pos, backup_pos;
+	initial_pos.x = 36;
+	initial_pos.y = 12;
+	backup_pos = initial_pos;
 	char user_name[10];
 
 	while (1) 
@@ -28,20 +34,37 @@ void GetScore(int user_score)
 		scanf("%s", user_name);
 		if (strlen(user_name) == 3)
 		{
+			backup_pos.y += 1;
+			gotoxy(backup_pos);
 			break;
 		}
 		else if(user_name == NULL || strlen(user_name) != 3)
 		{
-			printf("이름은 3글자로 입력해주세요!! \n");
-		}
+			backup_pos.y += 1;
+			gotoxy(backup_pos);
+			printf("이름은 3글자로 입력해주세요!! ");
+			Sleep(1000);
+			backup_pos = initial_pos;
+			gotoxy(initial_pos);
+			printf("                                           \n");
+			backup_pos.y += 1;
+			gotoxy(backup_pos);
+			printf("                                           \n");
+			backup_pos = initial_pos;
+			gotoxy(initial_pos);
 
+		}
+		
 	}
 
 
 	strcpy(UserResult.user, user_name);
 	UserResult.score = user_score;
+
+	printf("유저네임은 : %s, 스코어는 %d", UserResult.user, UserResult.score);
+	
 }
-*/
+
 
 
 
@@ -56,7 +79,7 @@ void GetScore(int user_score)
  * Output : void
  * Version : 0.0 미완성임
  */
- /*
+
 void SaveScore(void)
 {
 	FILE* file = fopen("ranking_table.txt", "r");
@@ -72,7 +95,7 @@ void SaveScore(void)
 		sizeof(each_score) / sizeof(each_score[0]),
 		file) != NULL)
 	{
-		strcpy(temp_info.user, strtok(NULL, ","));
+		strcpy(temp_info.user, strtok(each_score, ","));
 		temp_info.score = atoi(strtok(NULL, ","));
 
 		if (save_flag && (UserResult.score > temp_info.score))
@@ -100,7 +123,7 @@ void SaveScore(void)
 	fclose(file);
 	
 }
- */
+ 
 
 /*
  * Function Name : ShowScore

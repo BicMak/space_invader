@@ -17,6 +17,7 @@
 #include <conio.h>
 #include <wincon.h>
 #include "console.h"
+#include "score.h"
 
 typedef struct {
 	int flag;
