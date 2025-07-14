@@ -201,10 +201,11 @@ void MyBoomshot(UPOINT ptthisMypos)
 	myship_boom.flag[0] = TRUE;
 	myship_boom.pos[0].x = ptthisMypos.x + 2;
 	myship_boom.pos[0].y = ptthisMypos.y - 1;
+	myship_boom.start_position = ptthisMypos;
 	for (int i = 1; i < 5; i++)
 	{
 		myship_boom.pos[i].x = myship_boom.pos[0].x;
-		myship_boom.pos[i].y = myship_boom.pos[0].y - i;
+		myship_boom.pos[i].y = myship_boom.pos[0].y + i;
 	}
 }
 
@@ -224,26 +225,15 @@ void DrawBoom()
 	UPOINT ptpos, oldpos;
 
 
-	if (myship_boom.flag[0] == TRUE)
+	if (myship_boom.flag[0])
 	{
 		//캐릭터의 위치와 ship의 위치에 따라서 빔형상 계산
 		for (int i = 0; i < 5; i++) 
 		{
-			if (myship_boom.pos[i].y < 1)
+			if (myship_boom.pos[i].y > 2 || 
+				myship_boom.pos[i].y <= myship_boom.start_position.y)
 			{
 				myship_boom.flag[i] = TRUE;
-			}
-			else
-			{
-				myship_boom.flag[i] = FALSE;
-			}
-
-		}
-
-		for (int i = 0; i < 5; i++)
-		{
-			if (myship_boom.flag[i] == TRUE)
-			{
 				oldpos.x = myship_boom.pos[i].x;
 				oldpos.y = myship_boom.pos[i].y;
 				myship_boom.pos[i].y -= 1;
@@ -253,7 +243,17 @@ void DrawBoom()
 				printf("    \n");
 				gotoxy(ptpos);
 				printf("%s", PowerAttack[i]);
+
 			}
+			else
+			{
+				myship_boom.flag[i] = FALSE;
+				continue;
+			}
+
+
+
 		}
+
 	}
 }

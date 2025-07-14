@@ -33,6 +33,7 @@ typedef struct {
 typedef struct {
 	int flag[5]; //0번이 가장 먼저 나가는 레이저
 	UPOINT pos[5]; //
+	UPOINT start_position;
 } BOOM;
 
 typedef struct {
