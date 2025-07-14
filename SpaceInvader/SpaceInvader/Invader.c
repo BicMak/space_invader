@@ -128,6 +128,9 @@ void  play()
 	pthi.x = 2;
 	pthi.y = 1;
 
+	// Boom count
+	int boom_cnt = 3;
+
 	ShowScore(scoreboard);
 	DrawBox(&ptdashboard,scoreboard);
 
@@ -151,7 +154,11 @@ void  play()
 				break;
 			// ÆøÅº ½î±â
 			case 's':
-				MyBoomshot(ptthisMypos);
+				if(boom_cnt > 0 )
+				{
+					MyBoomshot(ptthisMypos);
+					boom_cnt = 1;
+				}
 				break;
 			// ¿À¸¥ÂÊ ÀÌµ¿
 			case 'j':

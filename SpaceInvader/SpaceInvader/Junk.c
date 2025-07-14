@@ -299,17 +299,16 @@ void CheckenemyBullet(ENEMYSHIP* enemyship)
 	static BULLET boompos[MAXMY_BULLET];
 	static int flag;
 
-	for (i = 0; i < 5; i++)
-	{
-		if (myship_boom.flag[i] == TRUE)
+
+		if (myship_boom.flag[0] == TRUE)
 		{
 			for (int j = 0; j < MAX_ENEMY; j++)
 			{
 				if (enemyship[j].flag == TRUE)
 				{
-					if ((enemyship[j].pos.x >= myship_boom.pos[i].x - 2 &&
-						myship_bullet[i].pos.x -2  >= enemyship[j].pos.x )  &&
-						(enemyship[j].pos.y == myship_boom.pos[i].y))
+					if ((enemyship[j].pos.x >= myship_boom.pos[0].x - 5 &&
+						myship_bullet[0].pos.x -5  >= enemyship[j].pos.x )  &&
+						(enemyship[j].pos.y == myship_boom.pos[0].y))
 					{
 						enemyship[j].flag = FALSE;
 						gotoxy(enemyship[j].pos);
@@ -320,7 +319,7 @@ void CheckenemyBullet(ENEMYSHIP* enemyship)
 				}
 			}
 		}
-	}
+
 
 	for (i = 0; i < MAXMY_BULLET; i++)
 	{

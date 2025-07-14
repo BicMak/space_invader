@@ -47,7 +47,7 @@ void InitMyBullet()
 	int i;
 	UPOINT current_pos;
 
-	for (i = 0; i < MAXENEMY_BULLET; i++)
+	for (i = 0; i < MAXMY_BULLET; i++)
 	{
 		if (myship_bullet[i].flag == TRUE)
 		{
@@ -225,12 +225,12 @@ void DrawBoom()
 	UPOINT ptpos, oldpos;
 
 
-	if (myship_boom.flag[0])
+	if (myship_boom.flag[0] == TRUE)
 	{
 		//캐릭터의 위치와 ship의 위치에 따라서 빔형상 계산
 		for (int i = 0; i < 5; i++) 
 		{
-			if (myship_boom.pos[i].y > 2 || 
+			if (myship_boom.pos[i].y > 2 && 
 				myship_boom.pos[i].y <= myship_boom.start_position.y)
 			{
 				myship_boom.flag[i] = TRUE;
@@ -240,18 +240,17 @@ void DrawBoom()
 				ptpos.x = myship_boom.pos[i].x;
 				ptpos.y = myship_boom.pos[i].y;
 				gotoxy(oldpos);
-				printf("    \n");
+				printf("      ");
 				gotoxy(ptpos);
 				printf("%s", PowerAttack[i]);
 
 			}
 			else
 			{
+				myship_boom.pos[i].y -= 1;
 				myship_boom.flag[i] = FALSE;
 				continue;
 			}
-
-
 
 		}
 
