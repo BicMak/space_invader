@@ -1,2 +1,11 @@
 ﻿  Junk.c
+  Mychar.c
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\Mychar.c(224,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+  코드를 생성하고 있습니다...
+  Invader.c
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\Invader.c(40,21): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\Invader.c(30,34): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\Invader.c(139,20): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\Invader.c(227,31): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+D:\class_project\space_invader\SpaceInvader\SpaceInvader\Invader.c(104,33): warning C4244: '초기화 중': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   SpaceInvader.vcxproj -> D:\class_project\space_invader\SpaceInvader\x64\Debug\SpaceInvader.exe

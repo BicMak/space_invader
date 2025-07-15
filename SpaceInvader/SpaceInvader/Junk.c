@@ -288,7 +288,7 @@ int Checkenemypos()
  * 적의 위치가 y축기준으로 23보다 커지면 내 총알의 flag를 ON 으로 바꾼다.
  * 그리고 적이 총알에 맞는 경우 적비행기의 플래그를 내리고
  * 폭팔이펙트와 off 시킴
- *
+ * 폭팔이벤트도 최종 검수
  * Input : ENEMYSHIP *enemyship
  * Output : void
  * Version : 0.0
@@ -297,17 +297,20 @@ void CheckenemyBullet(ENEMYSHIP* enemyship)
 {
 	int i, j;
 	static BULLET boompos[MAXMY_BULLET];
+	UPOINT checkBoom;
 	static int flag;
 
 
-		if (myship_boom.flag[0] == TRUE)
-		{
-			for (int j = 0; j < MAX_ENEMY; j++)
+	if (myship_boom.flag[0] == TRUE)
+	{
+		for (int j = 0; j < MAX_ENEMY; j++)
+		{	
+			if (myship_boom.flag[0] == TRUE)
 			{
 				if (enemyship[j].flag == TRUE)
 				{
-					if ((enemyship[j].pos.x >= myship_boom.pos[0].x - 5 &&
-						myship_bullet[0].pos.x -5  >= enemyship[j].pos.x )  &&
+					if ((enemyship[j].pos.x >= myship_boom.pos[0].x - 3 &&
+						myship_bullet[0].pos.x + 3 >= enemyship[j].pos.x) &&
 						(enemyship[j].pos.y == myship_boom.pos[0].y))
 					{
 						enemyship[j].flag = FALSE;
@@ -317,8 +320,22 @@ void CheckenemyBullet(ENEMYSHIP* enemyship)
 						killnum++;
 					}
 				}
-			}
+			}			
 		}
+	}
+	else
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			myship_boom.flag[i] = FALSE;
+			checkBoom.x = myship_boom.pos[i].x;
+			checkBoom.y = myship_boom.pos[i].y;
+			gotoxy(checkBoom);
+			printf("      ");
+
+		}
+
+	}
 
 
 	for (i = 0; i < MAXMY_BULLET; i++)
@@ -346,8 +363,6 @@ void CheckenemyBullet(ENEMYSHIP* enemyship)
 			}
 		}
 	}
-
-
 }
 
 

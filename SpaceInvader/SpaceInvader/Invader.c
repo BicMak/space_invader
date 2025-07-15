@@ -157,7 +157,7 @@ void  play()
 				if(boom_cnt > 0 )
 				{
 					MyBoomshot(ptthisMypos);
-					boom_cnt = 1;
+					boom_cnt -= 1;
 				}
 				break;
 			// 오른쪽 이동
