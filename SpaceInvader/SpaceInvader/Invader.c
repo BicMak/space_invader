@@ -6,8 +6,10 @@ BOOM       myship_boom;
 int    timeflag = FALSE;
 int    score, hiscore = 2000, killnum;
 char* Aboom[8];
+static int boom_cnt = 3;
 
 void DrawBox(UPOINT* score_position, userInfo* scoreBoard);
+void showBoomcnt();
 
 //게임 플레이를 실제로 가동하는 함수
 void main(void)
@@ -78,7 +80,6 @@ void main(void)
 			timeflag = 0;
 			ptend.y = 12;
 			loop = 1;
-			score = 0;
 		}
 		else
 			loop = 0;
@@ -129,7 +130,7 @@ void  play()
 	pthi.y = 1;
 
 	// Boom count
-	int boom_cnt = 3;
+	
 
 	ShowScore(scoreboard);
 	DrawBox(&ptdashboard,scoreboard);
@@ -137,6 +138,8 @@ void  play()
 	while (TRUE)
 	{
 		gthisTickCount = GetTickCount64();
+		showBoomcnt();
+		
 
 		// 1. 키보드 입력받기
 		if (_kbhit())
@@ -158,6 +161,7 @@ void  play()
 				{
 					MyBoomshot(ptthisMypos);
 					boom_cnt -= 1;
+					
 				}
 				break;
 			// 오른쪽 이동
@@ -238,6 +242,17 @@ void  play()
 
 }
 
+
+/**
+ * Function Name : DrawBox
+ *
+ * Function Description :
+ * 스코어보드 파일에 있는 데이터를 화면에 띄워줌
+ *
+ * Input : UPOINT *score_position, userInfo *scoreBoard
+ * Output : void
+ * Version : 0.0
+ */
 void DrawBox(UPOINT *score_position, userInfo *scoreBoard) {
 	UPOINT temppostion = *score_position;
 	char ranking[][10] = {"1st","2nd","3rd", "4th", "5th"};
@@ -258,4 +273,34 @@ void DrawBox(UPOINT *score_position, userInfo *scoreBoard) {
 	}
 
 	printf("└─────────");
+
+}
+
+
+/**
+ * Function Name : showBoomcnt
+ *
+ * Function Description :
+ * 화면에 남아있는 포탄 개수를 알려줌
+ *
+ * Input : void
+ * Output : void
+ * Version : 0.0
+ */
+void showBoomcnt()
+{
+	UPOINT CNT_write_pose;
+	CNT_write_pose.x = 85;
+	CNT_write_pose.y = 15;
+	if (boom_cnt != 0) 
+	{
+		gotoxy(CNT_write_pose);
+		printf("남아 있는 폭탄의 개수 : %d    ", boom_cnt);
+	}
+	else
+	{
+		gotoxy(CNT_write_pose);
+		printf("폭탄을 전부 소진 하였습니다.    ");
+	}
+
 }

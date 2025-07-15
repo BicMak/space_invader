@@ -217,7 +217,7 @@ void MyBoomshot(UPOINT ptthisMypos)
  *
  * Input : void
  * Output : void
- * Version : 현재 미완성
+ * Version : 0.0
  */
 void DrawBoom()
 {
