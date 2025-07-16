@@ -82,6 +82,7 @@ void DrawMyship(UPOINT* pt, UPOINT* oldpt)
 	{
 		gotoxy(temp_pt);
 		printf("       ");
+		fflush(stdout);
 		temp_pt.y -= 1;
 	}
 	gotoxy(*pt);
@@ -207,6 +208,7 @@ void MyBoomshot(UPOINT ptthisMypos)
 		myship_boom.pos[i].x = myship_boom.pos[0].x;
 		myship_boom.pos[i].y = myship_boom.pos[0].y + i;
 	}
+
 }
 
 /**

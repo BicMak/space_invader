@@ -1,6 +1,6 @@
 #include "main.h"
 
-char  enemyship_shape[5] = "^V^";
+char  enemyship_shape[5] = "|q|";
 
 ENEMYSHIP enemyship[MAX_ENEMY];
 UPOINT ptOld[MAX_ENEMY];
@@ -179,6 +179,8 @@ void InitBullet()
 	for (i = 0; i < MAXENEMY_BULLET; i++)
 	{
 		enemy_bullet[i].flag = FALSE;
+		gotoxy(enemy_bullet[i].pos);
+		printf(" ");
 		enemy_bullet[i].pos.x = 0;
 		enemy_bullet[i].pos.y = 0;
 	}

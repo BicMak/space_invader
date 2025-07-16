@@ -161,6 +161,7 @@ void  play()
 				{
 					MyBoomshot(ptthisMypos);
 					boom_cnt -= 1;
+					InitBullet();
 					
 				}
 				break;
@@ -219,8 +220,12 @@ void  play()
 			}
 			
 
-			if (killnum > 20)
-				juckspeed = 150;
+			if (killnum >= 10 && killnum < 20)
+				juckspeed = 300;
+			else if (killnum >= 20 && killnum < 30)
+				juckspeed = 200;
+			else if (killnum >= 20 && killnum < 30)
+				juckspeed = 50;
 
 			gotoxy(pthi);
 
