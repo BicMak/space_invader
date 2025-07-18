@@ -6,7 +6,6 @@
 #include "Console.h"
 
 
-
 /*
  * Function Name : GetScore
  *

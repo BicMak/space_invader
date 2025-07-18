@@ -1,6 +1,7 @@
 #include "main.h"
 
 char  enemyship_shape[5] = "|q|";
+char  *boom_effect[] = { " *** ", "  *  ", "     " };
 
 ENEMYSHIP enemyship[MAX_ENEMY];
 UPOINT ptOld[MAX_ENEMY];
@@ -311,13 +312,17 @@ void CheckenemyBullet(ENEMYSHIP* enemyship)
 			{
 				if (enemyship[j].flag == TRUE)
 				{
-					if ((enemyship[j].pos.x >= myship_boom.pos[0].x - 3 &&
-						myship_bullet[0].pos.x + 3 >= enemyship[j].pos.x) &&
+					if ((enemyship[j].pos.x >= myship_boom.pos[0].x - 5 &&
+						myship_bullet[0].pos.x + 5 >= enemyship[j].pos.x) &&
 						(enemyship[j].pos.y == myship_boom.pos[0].y))
 					{
 						enemyship[j].flag = FALSE;
-						gotoxy(enemyship[j].pos);
-						printf(" *** ");
+						for (int k = 0; k < 3; k++)
+						{
+							gotoxy(enemyship[j].pos);
+							printf("%s", boom_effect[k]);
+							Sleep(10);
+						}
 						score += 100;
 						killnum++;
 					}
@@ -353,8 +358,12 @@ void CheckenemyBullet(ENEMYSHIP* enemyship)
 						(enemyship[j].pos.y == myship_bullet[i].pos.y))
 					{
 						enemyship[j].flag = FALSE;
-						gotoxy(enemyship[j].pos);
-						printf(" *** ");
+						for(int k = 0; k<3; k++)
+						{
+							gotoxy(enemyship[j].pos);
+							printf("%s",boom_effect[k]);
+							Sleep(10);
+						}
 						myship_bullet[i].flag = FALSE;
 						score += 100;
 						killnum++;

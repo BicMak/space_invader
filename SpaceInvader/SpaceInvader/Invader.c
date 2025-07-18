@@ -7,15 +7,19 @@ int    timeflag = FALSE;
 int    score, hiscore = 2000, killnum;
 char* Aboom[8];
 static int boom_cnt = 3;
+int stage = 1;
 
 void DrawBox(UPOINT* score_position, userInfo* scoreBoard);
 void showBoomcnt();
+void showstage();
 
 //게임 플레이를 실제로 가동하는 함수
 void main(void)
 {
 	UPOINT        ptend;
+
 	int	loop = 1;
+	int start_score = 0;
 
 	Aboom[0] = "i<^>i";
 	Aboom[1] = "i(*)i";
@@ -27,13 +31,17 @@ void main(void)
 	Aboom[7] = "       ";
 	ptend.x = 36;
 	ptend.y = 12;
+
+
 	while (loop)
 	{
 		DWORD         thisTickCount =  GetTickCount64();
 		DWORD         bcount = thisTickCount;
 		int           bp = 0;
 
+
 		play();
+
 
 		for (;;)
 		{
@@ -57,17 +65,15 @@ void main(void)
 
 		ClearScreen();
 		gotoxy(ptend);
-		GetScore(score);
-		Sleep(3000);
-		SaveScore();
-
-		ptend.y += 1;
-
-
-		gotoxy(ptend);
-		printf("당신의 비행기는 파괴되었습니다.");
+		if (killnum < 40)
+			printf("당신의 비행기는 파괴되었습니다.");
+		else
+			printf("stage clear~~!");
 		ptend.y += 1;
 		gotoxy(ptend);
+		while (_kbhit()) {
+			_getch();
+		}
 		printf("다시 할까요? (y/n)\n");
 
 		if (_getch() == 'y')
@@ -75,14 +81,37 @@ void main(void)
 			ClearScreen();
 			InitBullet();
 			InitMyBullet();
+
 			bp = 0;
+
+			if (killnum < 40)
+			{
+				score = start_score;
+			}
+			else if (killnum == 40)
+			{
+				start_score = score;
+			}
+
 			killnum = 0;
 			timeflag = 0;
 			ptend.y = 12;
 			loop = 1;
+			
+
 		}
-		else
+		else if (_getch() == 'n')
+		{
+			ClearScreen();
+			Sleep(3000);
+			gotoxy(ptend);
+			GetScore(score);
+			SaveScore();
 			loop = 0;
+		}
+		
+
+
 	}
 }
 
@@ -139,7 +168,7 @@ void  play()
 	{
 		gthisTickCount = GetTickCount64();
 		showBoomcnt();
-		
+		showstage();
 
 		// 1. 키보드 입력받기
 		if (_kbhit())
@@ -211,21 +240,31 @@ void  play()
 			if (killnum < 40)
 			{
 				printf("점수 : %d", score);
+
 			}
 
 			else
 			{
+				
 				timeflag = TRUE;
+				if (juckspeed > 100)
+				{
+					juckspeed -= 100;
+					stage += 1;
+				}
+				else if (juckspeed <= 100)
+				{
+					juckspeed -= 20;
+					stage += 1;
+				}
+				else if (juckspeed == 20)
+				{
+					juckspeed = 20;
+				}
 				break;
 			}
 			
 
-			if (killnum >= 10 && killnum < 20)
-				juckspeed = 300;
-			else if (killnum >= 20 && killnum < 30)
-				juckspeed = 200;
-			else if (killnum >= 20 && killnum < 30)
-				juckspeed = 50;
 
 			gotoxy(pthi);
 
@@ -307,5 +346,15 @@ void showBoomcnt()
 		gotoxy(CNT_write_pose);
 		printf("폭탄을 전부 소진 하였습니다.    ");
 	}
+
+}
+
+void showstage()
+{
+	UPOINT stageStrpos;
+	stageStrpos.x = 2;
+	stageStrpos.y = 0;
+	gotoxy(stageStrpos);
+	printf("       || stage %d  || ", stage);
 
 }
